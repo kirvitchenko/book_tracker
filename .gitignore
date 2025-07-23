@@ -1,0 +1,59 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Python distribution / packaging
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Environment variables
+.env
+.env.*
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs and local databases
+*.log
+*.sqlite3
+
+# Django stuff:
+db.sqlite3
+/media/
+staticfiles/
+
+# Coverage reports
+htmlcov/
+.coverage
+coverage.xml
+*.cover
+
+# Pytest
+.pytest_cache/
+
+# MyPy
+.mypy_cache/
+
+# Docker
+**/__pycache__/
+docker-compose.override.yml
+Dockerfile
+*.pid
+
+# Poetry
+poetry.lock
+
+# Others
+*.DS_Store
