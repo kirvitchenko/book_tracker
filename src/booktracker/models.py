@@ -5,8 +5,8 @@ from django.utils import timezone
 # Create your models here.
 class Book(models.Model):
     title = models.CharField(max_length=100)
-    author_id = models.ManyToManyField('Author')
-    genre_id = models.ManyToManyField('Genre')
+    author = models.ManyToManyField('Author')
+    genre = models.ManyToManyField('Genre')
     start_reading_date = models.DateField(default=timezone.now)
     end_reading_date = models.DateField(default=timezone.now)
 
