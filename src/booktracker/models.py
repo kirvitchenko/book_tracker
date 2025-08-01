@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.core.validators import MaxValueValidator
 from django.db import models
+
 from django.utils import timezone
 
 
@@ -18,12 +19,25 @@ class Book(models.Model):
     title = models.CharField(max_length=100)
     author = models.ManyToManyField('Author')
     genre = models.ManyToManyField('Genre')
+    user = models.ManyToManyField(User, through='UserBook')
+
+    def __str__(self):
+        return self.title
+
+
+class UserBook(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    book = models.ForeignKey(Book, on_delete=models.CASCADE)
     start_reading_date = models.DateField(default=timezone.now)
     end_reading_date = models.DateField(default=timezone.now)
     rating = models.PositiveIntegerField(validators=[MaxValueValidator(10)])
 
-    def __str__(self):
-        return self.title
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["user", "book"], name="unique_user_book"
+            )
+        ]
 
 
 class Author(models.Model):
