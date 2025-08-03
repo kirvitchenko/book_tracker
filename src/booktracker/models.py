@@ -8,6 +8,7 @@ class Book(models.Model):
     title = models.CharField(max_length=100, verbose_name='Название')
     author = models.ManyToManyField('booktracker.Author', verbose_name='Автор')
     genre = models.ManyToManyField('booktracker.Genre', verbose_name="Жанр")
+    cover = models.ImageField(upload_to='\covers', blank=True, null=True, verbose_name='Обложка')
 
     def __str__(self):
         return self.title
