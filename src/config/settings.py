@@ -37,6 +37,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "booktracker",
+    'users',
 
     "django.contrib.admin",
     "django.contrib.auth",
@@ -132,7 +133,7 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 """переменная для аутентификации пользователя"""
-AUTH_USER_MODEL = 'booktracker.User'
+AUTH_USER_MODEL = 'users.User'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
