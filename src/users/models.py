@@ -5,10 +5,7 @@ from django.utils import timezone
 
 class User(AbstractUser):
     """
-    Модель пользователя которая наследуюется от Abstractuser и описывает дополнительные поля:
-    - avatar - аватар
-    - bitrh_date - дату рождения
-    - book - связь с моделью Book через модель UserBook
+    Модель пользователя которая наследуюется от Abstractuser
     """
     avatar = models.ImageField(upload_to='avatars/', blank=True, null=True, verbose_name='Аватар')
     birth_date = models.DateField(blank=True, null=True, verbose_name='Дата рождения')
@@ -16,7 +13,6 @@ class User(AbstractUser):
 
     def __str__(self):
         return self.username
-# Create your models here.
 
 class UserBook(models.Model):
     """Модель которая используется для связи книги и пользователя:
