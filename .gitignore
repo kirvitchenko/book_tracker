@@ -32,6 +32,7 @@ build/
 # Django stuff:
 db.sqlite3
 /media/
+src/media/*
 staticfiles/
 
 # Coverage reports
@@ -57,3 +58,4 @@ poetry.lock
 
 # Others
 *.DS_Store
+
